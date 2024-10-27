@@ -1,4 +1,4 @@
-public class WrongLoginException extends RuntimeException{
+public class WrongLoginException extends Exception{
     public String login;
 
     public WrongLoginException(String login){

@@ -2,17 +2,15 @@
 public class Main {
 
     public static void main(String[] args) {
-        ValidationService.validateLogin("Africa");
-        ValidationService.validatePassword("765tt", "765tt");
         try {
-            ValidationService.validateLogin();
-        } catch (WrongLoginException exception) {
-            System.out.println("Логин:%s");
+            ValidationService.validateLogin("Africa");
+        } catch (WrongLoginException e) {
+            throw new RuntimeException(e);
         }
         try {
-            ValidationService.validatePassword();
-        } catch (WrongPasswordException exception) {
-            System.out.println("Пароль:%s");
+            ValidationService.validatePassword("765tt", "765tt");
+        } catch (WrongPasswordException e) {
+            throw new RuntimeException(e);
         }
         System.out.println("Все параметры верны");
     }

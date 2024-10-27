@@ -2,11 +2,11 @@ public class ValidationService {
 
     public static final String VALIDATE_SYMBOLS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_";
     public static void validate(String login, String password, String confirmPassword){
-        validateLogin(login);
-        validatePassword(password,confirmPassword);
+      //  validateLogin(login);
+       // validatePassword(password,confirmPassword);
     }
 
-    public static void validateLogin(String login) {
+    public static void validateLogin(String login) throws WrongLoginException {
         if(login.length() > 20){
             throw new WrongLoginException("Логин содержит более 20 символов");
         }
@@ -17,7 +17,7 @@ public class ValidationService {
         }
 
     }
-    public static void validatePassword(String password, String confirmPassword){
+    public static void validatePassword(String password, String confirmPassword) throws WrongPasswordException {
         if(password.length() > 20){
             throw new WrongPasswordException("Пароль больше 20 символов");
         }
@@ -32,9 +32,4 @@ public class ValidationService {
 
     }
 
-    public static void validateLogin() {
-    }
-
-    public static void validatePassword() {
-    }
 }

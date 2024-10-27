@@ -1,4 +1,4 @@
-public class WrongPasswordException extends RuntimeException{
+public class WrongPasswordException extends Exception{
     public String password;
     public String confirmPassword;
 
